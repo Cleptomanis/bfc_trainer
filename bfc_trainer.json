@@ -5,8 +5,8 @@
 		"tip": "for 1v1 NTW T1 Fullbase",
 		"easy_tip": "Gets ~ 25% less power from each oil derrick",
 		"insane_tip": "Gets ~ 100% more power from each oil derrick\nStarts with defensive structures and oil derricks",
-		"wins": 100,
-		"losses": 7,
-		"draws": 0
+		"wins": 0,
+		"losses": 0,
+		"draws": 100
 	}
 }
