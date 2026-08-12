@@ -38,11 +38,22 @@ const researches = {
     "R-Vehicle-Metals02": 1000,
     "R-Vehicle-Metals03": 1000, //comp mk3
     "R-Vehicle-Metals04": 10,
+    "R-Vehicle-Metals05": 10,
+    "R-Vehicle-Metals06": 10,
+    "R-Vehicle-Metals07": 10,
+    "R-Vehicle-Metals08": 10,
+    "R-Vehicle-Metals09": 10,
+    
 
-    "R-Cyborg-Metals01": 10,
-    "R-Cyborg-Metals02": 10,
-    "R-Cyborg-Metals03": 10,
-    "R-Cyborg-Metals04": 10,
+    "R-Cyborg-Metals01": 20,
+    "R-Cyborg-Metals02": 20,
+    "R-Cyborg-Metals03": 20,
+    "R-Cyborg-Metals04": 20,
+    "R-Cyborg-Metals05": 20,
+    "R-Cyborg-Metals06": 20,
+    "R-Cyborg-Metals07": 20,
+    "R-Cyborg-Metals08": 20,
+    "R-Cyborg-Metals09": 20,
 
     
     "R-Vehicle-Body02": 10000, //leopard
