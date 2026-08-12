@@ -22,6 +22,9 @@ const researches = {
     "R-Wpn-Rocket-ROF03": 100,
 
 
+    "PENIS": 69,
+
+
     "R-Wpn-Rocket01-LtAT": 10000, //lancer
     "R-Wpn-Rocket07-Tank-Killer": 10000, //tk
     "R-Cyborg-Hvywpn-TK" : 10000, //tk borg
