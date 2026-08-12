@@ -55,6 +55,10 @@ const researches = {
     "R-Cyborg-Metals08": 20,
     "R-Cyborg-Metals09": 20,
 
+
+    "R-Sys-Sensor-Upgrade01":10,
+    "R-Sys-Sensor-Upgrade02":10,
+
     
     "R-Vehicle-Body02": 10000, //leopard
 
