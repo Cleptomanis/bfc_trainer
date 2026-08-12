@@ -16,6 +16,7 @@ const researches = {
     "R-Wpn-RocketSlow-Accuracy01": 1000,
     "R-Wpn-RocketSlow-Accuracy02": 10,
 
+    "R-Struc-RepairFacility":1000,
 
     "R-Wpn-Rocket-ROF01": 1000, //rof is important but no need to rush imho
     "R-Wpn-Rocket-ROF02": 100,
@@ -30,6 +31,9 @@ const researches = {
     "R-Cyborg-Hvywpn-TK" : 10000, //tk borg
     "R-Wpn-Rocket02-MRL": 10000, //mra
     "R-Wpn-Rocket02-MRLHvy": 10000, //hra
+
+
+    "R-Struc-Power-Upgrade01": 10000,
 
 
     "R-Vehicle-Metals01": 1000,
