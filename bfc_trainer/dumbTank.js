@@ -211,7 +211,13 @@ function dumbTank()
     var weaponTeam=enumArmy(me)
     var vtolTeam=enumVtol(me)
     var sensorTeam=enumDroid(me,DROID_SENSOR)
-    //var enemyTeam=enumDroid(enemy,DROID_WEAPON).concat(enumDroid(enemy,DROID_CYBORG))
+    var enemyTeam=enumDroid(enemy,DROID_WEAPON).concat(enumDroid(enemy,DROID_CYBORG))
+
+    if(weaponTeam.length-60>enemyTeam.length){
+        repairThreshold = 0
+    }else{
+        repairThreshold = 40
+    }
 
     if (weaponTeam.length==0)return
 
