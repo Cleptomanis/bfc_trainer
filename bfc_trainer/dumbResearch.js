@@ -5,7 +5,7 @@ const researches = {
     "R-Wpn-Rocket-Damage03": 100000,
     "R-Wpn-Rocket-Damage04": 100000,
     "R-Wpn-Rocket-Damage05": 100000, //heat mk 2
-    "R-Wpn-Rocket-Damage06": 10,
+    "R-Wpn-Rocket-Damage06": 100000,
     "R-Wpn-Rocket-Damage07": 10,
     "R-Wpn-Rocket-Damage08": 10,
     "R-Wpn-Rocket-Damage09": 10,
@@ -43,7 +43,7 @@ const researches = {
 
 
 
-    "R-Struc-Power-Upgrade01": 10000,
+    "R-Struc-Power-Upgrade01": 5,
     "R-Struc-Power-Upgrade02": 20,
 
 
@@ -71,7 +71,7 @@ const researches = {
 
     "R-Sys-Sensor-Upgrade01":10,
     "R-Sys-Sensor-Upgrade02":30,
-    "R-Sys-Sensor-Upgrade02":10,
+    "R-Sys-Sensor-Upgrade03":10,
 
     
     "R-Vehicle-Body02": 10000, //leopard
