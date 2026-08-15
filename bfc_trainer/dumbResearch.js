@@ -10,17 +10,24 @@ const researches = {
     "R-Wpn-Rocket-Damage08": 10,
     "R-Wpn-Rocket-Damage09": 10,
 
+    "R-Wpn-Missile-Damage01": 100000,
+    "R-Wpn-Missile-Damage02": 100000,
+    "R-Wpn-Missile-Damage03": 100000,
 
     "R-Wpn-Rocket-Accuracy01": 100,
     "R-Wpn-Rocket-Accuracy02": 1000,
     "R-Wpn-RocketSlow-Accuracy01": 1000,
-    "R-Wpn-RocketSlow-Accuracy02": 10,
+    "R-Wpn-RocketSlow-Accuracy02": 30,
 
     "R-Struc-RepairFacility":1000,
 
     "R-Wpn-Rocket-ROF01": 1000, //rof is important but no need to rush imho
     "R-Wpn-Rocket-ROF02": 100,
     "R-Wpn-Rocket-ROF03": 100,
+
+    "R-Wpn-Missile-ROF01": 1000, //missile rof
+    "R-Wpn-Missile-ROF02": 100,
+    "R-Wpn-Missile-ROF03": 100,
 
 
 
@@ -29,9 +36,15 @@ const researches = {
     "R-Cyborg-Hvywpn-TK" : 10000, //tk borg
     "R-Wpn-Rocket02-MRL": 10000, //mra
     "R-Wpn-Rocket02-MRLHvy": 10000, //hra
+    "R-Wpn-Laser01": 100000, //flashlight
+    "R-Wpn-Missile2A-T": 100000, //scourge
+    "R-Wpn-MdArtMissile": 100000, //seraph
+    "R-Cyborg-Hvywpn-A-T": 10000, // super scourge
+
 
 
     "R-Struc-Power-Upgrade01": 10000,
+    "R-Struc-Power-Upgrade02": 20,
 
 
     "R-Vehicle-Metals01": 1000,
@@ -48,7 +61,7 @@ const researches = {
     "R-Cyborg-Metals01": 20,
     "R-Cyborg-Metals02": 20,
     "R-Cyborg-Metals03": 20,
-    "R-Cyborg-Metals04": 20,
+    "R-Cyborg-Metals04": 1000,
     "R-Cyborg-Metals05": 20,
     "R-Cyborg-Metals06": 20,
     "R-Cyborg-Metals07": 20,
@@ -57,6 +70,7 @@ const researches = {
 
 
     "R-Sys-Sensor-Upgrade01":10,
+    "R-Sys-Sensor-Upgrade02":30,
     "R-Sys-Sensor-Upgrade02":10,
 
     

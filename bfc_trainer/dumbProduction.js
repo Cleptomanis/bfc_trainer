@@ -33,10 +33,8 @@ const templateProp={
 const templateWeapon={
     MG:["HeavyLaser","Laser2PULSEMk1","Laser3BEAMMk1","MG5TWINROTARY","MG4ROTARYMk1","MG3Mk1","MG2Mk1","MG1Mk1"],
     CANNON:["RailGun3Mk1","RailGun2Mk1",'RailGun1Mk1', "Laser4-PlasmaCannon","Cannon6TwinAslt",'Cannon375mmMk1',"Cannon5VulcanMk1","Cannon4AUTOMk1","Cannon2A-TMk1","Cannon1Mk1"],
-    // Vanilla-style replacement order, with missile components removed:
-    // Tank Killer replaces Lancer; Heavy Rocket Array replaces Mini-Rocket Array.
-    ROCKET:["Rocket-HvyA-T","Rocket-LtA-T","Rocket-Pod"],
-    ROCKET2:["Rocket-MRL-Hvy","Rocket-MRL"],
+    ROCKET:["Missile-A-T","Rocket-HvyA-T","Rocket-LtA-T","Rocket-Pod"],
+    ROCKET2:["Missile-MdArt","Laser3BEAMMk1"/*flashlight */,"Rocket-MRL-Hvy","Rocket-MRL"],
     MORTAR:["Howitzer150Mk1","Howitzer-Incendiary","Howitzer03-Rot","Howitzer105Mk1", "Mortar-Incendiary","Mortar3ROTARYMk1","Mortar2Mk1","Mortar1Mk1"],
     FLAME:["PlasmiteFlamer","Flame2","Flame1Mk1"],
     BOMB:["Bomb5-VTOL-Plasmite","Bomb4-VTOL-HvyINC","RailGun2-VTOL","Bomb2-VTOL-HvHE","RailGun1-VTOL","Bomb1-VTOL-LtHE","Cannon4AUTO-VTOL"],
@@ -54,7 +52,7 @@ const _droidAA2=["Rocket-Sunburst","AAGun2Mk1Quad","AAGunLaser","QuadRotAAGun","
 const cyborgWeapon={
     MG:["Cyb-Hvywpn-PulseLsr","Cyb-Wpn-Laser","CyborgRotMG","CyborgChaingun"],
     CANNON:["Cyb-Hvywpn-RailGunner","Cyb-Wpn-Rail1","Cyb-Hvywpn-HPV","Cyb-Hvywpn-Mcannon","CyborgCannon","CyborgChaingun"],
-    ROCKET:["Cyb-Hvywpn-TK","CyborgRocket","CyborgChaingun"],
+    ROCKET:["Cyb-Hvywpn-A-T","Cyb-Wpn-Atmiss","Cyb-Hvywpn-TK","CyborgRocket","CyborgChaingun"],
     FLAME:["Cyb-Wpn-Thermite","CyborgFlamer01"],
     MORTAR:["Cyb-Wpn-Grenade"]
 }
