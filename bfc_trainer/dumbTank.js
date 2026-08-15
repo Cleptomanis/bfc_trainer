@@ -234,6 +234,8 @@ function dumbTank()
             return orderDroidLoc(droid,DORDER_MOVE,rpos.x,rpos.y)
         }
 
+        if (enemyDistance<30)return orderDroid(droid,DORDER_RTB)
+
         var target=rpos
         if (weaponTeam.length>35 && oilRatio>24 && droid.health>30)
         {
