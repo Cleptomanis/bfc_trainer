@@ -228,7 +228,6 @@ function monoFactory2(factoryCyborg)
             break
         case SCHEMA_ROCKET:
             var w=cyborgWeapon.ROCKET.find(x=>componentAvailable(undefined,x))
-            if (!componentAvailable(undefined,"Rocket-LtA-T")) if (Math.random()<.3*(1+2*flamerRatio)) w="CyborgFlamer01"//if (urandom()<.3*(1+2*flamerRatio)) w="CyborgFlamer01"
             break
         case SCHEMA_MORTAR:
             var w=cyborgWeapon.FLAME.find(x=>componentAvailable(undefined,x))
