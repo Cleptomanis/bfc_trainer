@@ -43,7 +43,7 @@ const researches = {
 
 
 
-    "R-Struc-Power-Upgrade01": 10000,
+    "R-Struc-Power-Upgrade01": 5,
     "R-Struc-Power-Upgrade02": 20,
     "R-Struc-Power-Upgrade03": 3,
     "R-Struc-Power-Upgrade04": 3,
@@ -73,7 +73,7 @@ const researches = {
 
     "R-Sys-Sensor-Upgrade01":1000,
     "R-Sys-Sensor-Upgrade02":30,
-    "R-Sys-Sensor-Upgrade02":10,
+    "R-Sys-Sensor-Upgrade03":10,
 
     
     "R-Vehicle-Body02": 10000, //leopard
