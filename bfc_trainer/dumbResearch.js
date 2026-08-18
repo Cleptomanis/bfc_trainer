@@ -71,7 +71,7 @@ const researches = {
     "R-Cyborg-Metals09": 20,
 
 
-    "R-Sys-Sensor-Upgrade01":10,
+    "R-Sys-Sensor-Upgrade01":1000,
     "R-Sys-Sensor-Upgrade02":30,
     "R-Sys-Sensor-Upgrade03":10,
 

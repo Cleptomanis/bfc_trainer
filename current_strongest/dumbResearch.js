@@ -5,18 +5,18 @@ const researches = {
     "R-Wpn-Rocket-Damage03": 100000,
     "R-Wpn-Rocket-Damage04": 100000,
     "R-Wpn-Rocket-Damage05": 100000, //heat mk 2
-    "R-Wpn-Rocket-Damage06": 10,
-    "R-Wpn-Rocket-Damage07": 10,
-    "R-Wpn-Rocket-Damage08": 10,
-    "R-Wpn-Rocket-Damage09": 10,
+    "R-Wpn-Rocket-Damage06": 1,
+    "R-Wpn-Rocket-Damage07": 1,
+    "R-Wpn-Rocket-Damage08": 1,
+    "R-Wpn-Rocket-Damage09": 1,
 
     "R-Wpn-Missile-Damage01": 100000,
     "R-Wpn-Missile-Damage02": 100000,
     "R-Wpn-Missile-Damage03": 100000,
 
     "R-Wpn-Rocket-Accuracy01": 100,
-    "R-Wpn-Rocket-Accuracy02": 1000,
-    "R-Wpn-RocketSlow-Accuracy01": 1000,
+    "R-Wpn-Rocket-Accuracy02": 2000,
+    "R-Wpn-RocketSlow-Accuracy01": 2000,
     "R-Wpn-RocketSlow-Accuracy02": 30,
 
     "R-Struc-RepairFacility":500,
@@ -45,6 +45,8 @@ const researches = {
 
     "R-Struc-Power-Upgrade01": 10000,
     "R-Struc-Power-Upgrade02": 20,
+    "R-Struc-Power-Upgrade03": 3,
+    "R-Struc-Power-Upgrade04": 3,
 
 
     "R-Vehicle-Metals01": 1000,
@@ -60,7 +62,7 @@ const researches = {
 
     "R-Cyborg-Metals01": 1000,
     "R-Cyborg-Metals02": 1000,
-    "R-Cyborg-Metals03": 10,
+    "R-Cyborg-Metals03": 1000,
     "R-Cyborg-Metals04": 1000,
     "R-Cyborg-Metals05": 20,
     "R-Cyborg-Metals06": 20,
@@ -69,7 +71,7 @@ const researches = {
     "R-Cyborg-Metals09": 20,
 
 
-    "R-Sys-Sensor-Upgrade01":10,
+    "R-Sys-Sensor-Upgrade01":1000,
     "R-Sys-Sensor-Upgrade02":30,
     "R-Sys-Sensor-Upgrade02":10,
 
@@ -89,7 +91,7 @@ const researches = {
 
 
     "R-Struc-Factory-Upgrade01": 10000,
-    "R-Struc-Factory-Upgrade04": 1, //robotic
+    "R-Struc-Factory-Upgrade04": 2, //robotic
 }
 
 

@@ -8,6 +8,8 @@ var _repairMod=[1, 1.2, 1.5, 1, 1, 1, 1]
 var repairHigh=.5
 var repairLow=.1
 
+var RTBThreshold=10
+
 var limitHigh=.9
 var limitLow=.7
 
@@ -234,7 +236,7 @@ function dumbTank()
             return orderDroidLoc(droid,DORDER_MOVE,rpos.x,rpos.y)
         }
 
-        if (enemyDistance<30)return orderDroid(droid,DORDER_RTB)
+        if (enemyDistance<RTBThreshold)return orderDroid(droid,DORDER_RTB)
 
         var target=rpos
         if (weaponTeam.length>35 && oilRatio>24 && droid.health>30)
@@ -361,7 +363,7 @@ function dumbTank()
 
     var sensorTeamRange=Upgrades[me].Sensor["Sensor Turret"].Range/128-2
     sensorTeam.forEach(droid=>{
-        if (droid.health<60 || enumRange(droid.x,droid.y,sensorTeamRange,ENEMIES).length>0)return orderDroid(droid,DORDER_RTR)
+        if (enumRange(droid.x,droid.y,sensorTeamRange,ENEMIES).length>0)return orderDroid(droid,DORDER_RTR)
         return orderDroidLoc(droid,DORDER_PATROL,pos.x,pos.y)
     })
 
