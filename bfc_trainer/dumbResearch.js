@@ -73,7 +73,7 @@ const researches = {
 
     "R-Sys-Sensor-Upgrade01":1000,
     "R-Sys-Sensor-Upgrade02":30,
-    "R-Sys-Sensor-Upgrade03":10,
+    "R-Sys-Sensor-Upgrade03":1000,
 
     
     "R-Vehicle-Body02": 10000, //leopard
@@ -90,7 +90,6 @@ const researches = {
     "R-Struc-Research-Upgrade09": 100000000,
 
     "R-Wpn-MortarEMP": 1000000, //emp mortar
-    "R-Comp-CommandTurret01": 1000000, 
     "R-Comp-CommandTurret02": 1000000, //command turret mk2
 
 
