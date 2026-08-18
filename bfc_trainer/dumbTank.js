@@ -5,7 +5,7 @@ var state=0
 
 var repairThreshold=40
 var _repairMod=[1, 1.2, 1.5, 1, 1, 1, 1]
-var repairHigh=.25
+var repairHigh=.15
 var repairLow=.1
 
 var RTBThreshold=10
