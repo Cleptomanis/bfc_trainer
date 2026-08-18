@@ -223,10 +223,9 @@ function dumbTruck()
     
     structurePend=!done
 
-    if (done && truckTeam.length>0) {
-        const oilDrum=enumFeature(me,"OilDrum").filter(i=>safeDest(me,i.x,i.y))
-        if (oilDrum.length==0)return
-        const anchor=truckTeam[0]
-        orderDroidObj(anchor,DORDER_RECOVER,min(oilDrum,distTo(anchor)))
+    if (done) {
+        truckTeam.forEach(truck=>{
+            orderDroid(truck,DORDER_RTB)
+        })
     }
 }

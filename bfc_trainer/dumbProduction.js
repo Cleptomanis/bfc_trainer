@@ -268,9 +268,12 @@ function dumbProduction()
     {
         if (playerPower(me)>100)cyborg_factory.filter(structureIdle).forEach(monoFactory2)
     }*/
-    if (power>150*q.length )q.forEach(monoFactory)
-    power-=200*q.length
+
+    //prioritze borg production idk
+    
     if (power>(mortarRatio<.5 ? 100 : 1500)+150*q2.length)q2.forEach(monoFactory2)
     power-=100*q2.length
+    if (power>150*q.length )q.forEach(monoFactory)
+    power-=200*q.length
     if (power> 1500)vtol_factory.filter(structureIdle).forEach(monoFactory3) 
 }

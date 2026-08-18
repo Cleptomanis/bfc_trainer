@@ -52,7 +52,7 @@ const _droidAA2=["Rocket-Sunburst","AAGun2Mk1Quad","AAGunLaser","QuadRotAAGun","
 const cyborgWeapon={
     MG:["Cyb-Hvywpn-PulseLsr","Cyb-Wpn-Laser","CyborgRotMG","CyborgChaingun"],
     CANNON:["Cyb-Hvywpn-RailGunner","Cyb-Wpn-Rail1","Cyb-Hvywpn-HPV","Cyb-Hvywpn-Mcannon","CyborgCannon","CyborgChaingun"],
-    ROCKET:["Cyb-Hvywpn-A-T","Cyb-Wpn-Atmiss","Cyb-Hvywpn-TK","CyborgRocket","CyborgChaingun"],
+    ROCKET:["Cyb-Hvywpn-A-T","Cyb-Wpn-Atmiss","Cyb-Hvywpn-TK","CyborgChaingun"],
     FLAME:["Cyb-Wpn-Thermite","CyborgFlamer01"],
     MORTAR:["Cyb-Wpn-Grenade"]
 }
@@ -268,9 +268,12 @@ function dumbProduction()
     {
         if (playerPower(me)>100)cyborg_factory.filter(structureIdle).forEach(monoFactory2)
     }*/
-    if (power>150*q.length )q.forEach(monoFactory)
-    power-=200*q.length
+
+    //prioritze borg production idk
+    
     if (power>(mortarRatio<.5 ? 100 : 1500)+150*q2.length)q2.forEach(monoFactory2)
     power-=100*q2.length
+    if (power>150*q.length )q.forEach(monoFactory)
+    power-=200*q.length
     if (power> 1500)vtol_factory.filter(structureIdle).forEach(monoFactory3) 
 }
