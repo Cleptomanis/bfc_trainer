@@ -47,6 +47,8 @@ const researches = {
     "R-Struc-Power-Upgrade02": 20,
     "R-Struc-Power-Upgrade03": 3,
     "R-Struc-Power-Upgrade04": 3,
+    "R-Struc-Power-Upgrade05": 3,
+    "R-Struc-Power-Upgrade06": 3,
 
 
     "R-Vehicle-Metals01": 1000,
