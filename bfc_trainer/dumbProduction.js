@@ -76,7 +76,7 @@ function monoFactory(factory)
     var ownEmpMortarCount=enumDroid(me,DROID_WEAPON).filter(droid=>Array.isArray(droid.weapons) && droid.weapons.some(weapon => (weapon.fullname||weapon.name)==="Mortar-EMP")).length
     var empMortarWeapon=templateWeapon.MORTAREMP.find(i=>componentAvailable(undefined,i))
 
-    if (empMortarWeapon!==undefined && ownEmpMortarCount < 12)
+    if (empMortarWeapon!==undefined && ownEmpMortarCount < 5 && playerPower(me) > 1 && countDroid(DROID_ANY,me) >50)
     {
         return buildDroid(factory,empMortarWeapon,"Body2SUP","wheeled01",0,0,[empMortarWeapon],[empMortarWeapon])
     }
