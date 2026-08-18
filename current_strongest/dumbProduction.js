@@ -71,17 +71,14 @@ var monoFactory_lastSensor=0
 function monoFactory(factory)
 {
     var weaponTeam=unique(enumDroid(me,DROID_WEAPON).concat(enumDroid(me,DROID_CYBORG)),i=>i.id)
-    var weaponTeam2=unique(enumDroid(enemy,DROID_WEAPON).concat(enumDroid(enemy,DROID_CYBORG)),i=>i.id) 
+    var weaponTeam2=unique(enumDroid(enemy,DROID_WEAPON).concat(enumDroid(enemy,DROID_CYBORG)),i=>i.id)
     var vtolCount=max(players.filter((i)=>!allianceExistsBetween(me,i) || playerData[i].team!=playerData[me].team).map((i)=>enumDroid(i,DROID_WEAPON).filter(droid=>droid.isVTOL).length))
     var ownEmpMortarCount=enumDroid(me,DROID_WEAPON).filter(droid=>Array.isArray(droid.weapons) && droid.weapons.some(weapon => (weapon.fullname||weapon.name)==="Mortar-EMP")).length
+    var empMortarWeapon=templateWeapon.MORTAREMP.find(i=>componentAvailable(undefined,i))
 
-    if (ownEmpMortarCount < 12)
+    if (empMortarWeapon!==undefined && ownEmpMortarCount < 12)
     {
-        var empMortarWeapon=templateWeapon.MORTAREMP.find(i=>componentAvailable(undefined,i))
-        if (empMortarWeapon!==undefined)
-        {
-            return buildDroid(factory,empMortarWeapon,"Body2SUP","wheeled01",0,0,templateWeapon.MORTAREMP,templateWeapon.MORTAREMP)
-        }
+        return buildDroid(factory,empMortarWeapon,"Body2SUP","wheeled01",0,0,[empMortarWeapon],[empMortarWeapon])
     }
 
     //Truck
