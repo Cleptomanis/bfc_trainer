@@ -94,6 +94,8 @@ const researches = {
     "R-Wpn-MortarEMP": 1000000, //emp mortar
     "R-Comp-CommandTurret02": 1000000, //command turret mk2
 
+    "R-Sys-Autorepair-General": 10000000, //autorepair
+
 
     "R-Struc-Factory-Upgrade01": 10000,
     "R-Struc-Factory-Upgrade04": 2, //robotic
