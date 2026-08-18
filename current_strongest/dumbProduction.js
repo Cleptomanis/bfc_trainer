@@ -36,6 +36,7 @@ const templateWeapon={
     ROCKET:["Missile-A-T","Rocket-HvyA-T","Rocket-LtA-T","Rocket-Pod"],
     ROCKET2:["Missile-MdArt","Laser3BEAMMk1"/*flashlight */,"Rocket-MRL-Hvy","Rocket-MRL"],
     MORTAR:["Howitzer150Mk1","Howitzer-Incendiary","Howitzer03-Rot","Howitzer105Mk1", "Mortar-Incendiary","Mortar3ROTARYMk1","Mortar2Mk1","Mortar1Mk1"],
+    MORTAREMP:["Mortar-EMP"],
     FLAME:["PlasmiteFlamer","Flame2","Flame1Mk1"],
     BOMB:["Bomb5-VTOL-Plasmite","Bomb4-VTOL-HvyINC","RailGun2-VTOL","Bomb2-VTOL-HvHE","RailGun1-VTOL","Bomb1-VTOL-LtHE","Cannon4AUTO-VTOL"],
     REPAIR:["HeavyRepair","LightRepair1"],
@@ -72,6 +73,16 @@ function monoFactory(factory)
     var weaponTeam=unique(enumDroid(me,DROID_WEAPON).concat(enumDroid(me,DROID_CYBORG)),i=>i.id)
     var weaponTeam2=unique(enumDroid(enemy,DROID_WEAPON).concat(enumDroid(enemy,DROID_CYBORG)),i=>i.id) 
     var vtolCount=max(players.filter((i)=>!allianceExistsBetween(me,i) || playerData[i].team!=playerData[me].team).map((i)=>enumDroid(i,DROID_WEAPON).filter(droid=>droid.isVTOL).length))
+    var enemyEmpMortarCount=weaponTeam2.filter(droid=>Array.isArray(droid.weapons) && droid.weapons.some(weapon => (weapon.fullname||weapon.name)==="Mortar-EMP")).length
+
+    if (enemyEmpMortarCount>12)
+    {
+        var empMortarWeapon=templateWeapon.MORTAREMP.find(i=>componentAvailable(undefined,i))
+        if (empMortarWeapon!==undefined)
+        {
+            return buildDroid(factory,empMortarWeapon,"Body2SUP","wheeled01",0,0,templateWeapon.MORTAREMP,templateWeapon.MORTAREMP)
+        }
+    }
 
     //Truck
     if ((

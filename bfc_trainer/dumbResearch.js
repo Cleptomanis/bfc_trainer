@@ -89,6 +89,10 @@ const researches = {
     "R-Struc-Research-Upgrade08": 100000000,
     "R-Struc-Research-Upgrade09": 100000000,
 
+    "R-Wpn-MortarEMP": 1000000, //emp mortar
+    "R-Comp-CommandTurret01": 1000000, 
+    "R-Comp-CommandTurret02": 1000000, //command turret mk2
+
 
     "R-Struc-Factory-Upgrade01": 10000,
     "R-Struc-Factory-Upgrade04": 2, //robotic
