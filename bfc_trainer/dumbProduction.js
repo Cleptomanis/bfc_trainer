@@ -73,9 +73,9 @@ function monoFactory(factory)
     var weaponTeam=unique(enumDroid(me,DROID_WEAPON).concat(enumDroid(me,DROID_CYBORG)),i=>i.id)
     var weaponTeam2=unique(enumDroid(enemy,DROID_WEAPON).concat(enumDroid(enemy,DROID_CYBORG)),i=>i.id) 
     var vtolCount=max(players.filter((i)=>!allianceExistsBetween(me,i) || playerData[i].team!=playerData[me].team).map((i)=>enumDroid(i,DROID_WEAPON).filter(droid=>droid.isVTOL).length))
-    var enemyEmpMortarCount=weaponTeam2.filter(droid=>Array.isArray(droid.weapons) && droid.weapons.some(weapon => (weapon.fullname||weapon.name)==="Mortar-EMP")).length
+    var ownEmpMortarCount=enumDroid(me,DROID_WEAPON).filter(droid=>Array.isArray(droid.weapons) && droid.weapons.some(weapon => (weapon.fullname||weapon.name)==="Mortar-EMP")).length
 
-    if (enemyEmpMortarCount>12)
+    if (ownEmpMortarCount < 12)
     {
         var empMortarWeapon=templateWeapon.MORTAREMP.find(i=>componentAvailable(undefined,i))
         if (empMortarWeapon!==undefined)
