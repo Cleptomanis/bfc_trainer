@@ -275,10 +275,11 @@ function dumbTank()
     function isEmpDroid(droid)
     {
         var stat=objectWeaponStat(droid)
+        var names=(droid.weapons||[]).map(i=>String(i.fullname||i.name||""))
         return !!stat && (
             stat.Effect=="EMP" ||
-            /EMP/i.test(String(stat.Id||"")) ||
-            /EMP/i.test(String(stat.Name||""))
+            names.some(i=>/EMP/i.test(i)) ||
+            /EMP/i.test(String(stat.Id||stat.Name||""))
         )
     }
     var empTeam=weaponTeam.filter(isEmpDroid)
