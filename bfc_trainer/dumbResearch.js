@@ -19,7 +19,7 @@ const researches = {
     "R-Wpn-RocketSlow-Accuracy01": 2000,
     "R-Wpn-RocketSlow-Accuracy02": 30,
 
-    "R-Struc-RepairFacility":500,
+    "R-Struc-RepairFacility": 500,
 
     "R-Wpn-Rocket-ROF01": 1000, //rof is important but no need to rush imho
     "R-Wpn-Rocket-ROF02": 100,
@@ -33,7 +33,7 @@ const researches = {
 
     "R-Wpn-Rocket01-LtAT": 10000, //lancer
     "R-Wpn-Rocket07-Tank-Killer": 10000, //tk
-    "R-Cyborg-Hvywpn-TK" : 10000, //tk borg
+    "R-Cyborg-Hvywpn-TK": 10000, //tk borg
     "R-Wpn-Rocket02-MRL": 10000, //mra
     "R-Wpn-Rocket02-MRLHvy": 10000, //hra
     "R-Wpn-Laser01": 100000, //flashlight
@@ -60,7 +60,7 @@ const researches = {
     "R-Vehicle-Metals07": 10,
     "R-Vehicle-Metals08": 10,
     "R-Vehicle-Metals09": 10,
-    
+
 
     "R-Cyborg-Metals01": 1000,
     "R-Cyborg-Metals02": 1000,
@@ -73,11 +73,11 @@ const researches = {
     "R-Cyborg-Metals09": 20,
 
 
-    "R-Sys-Sensor-Upgrade01":1000,
-    "R-Sys-Sensor-Upgrade02":30,
-    "R-Sys-Sensor-Upgrade03":1000,
+    "R-Sys-Sensor-Upgrade01": 1000,
+    "R-Sys-Sensor-Upgrade02": 30,
+    "R-Sys-Sensor-Upgrade03": 1000,
 
-    
+
     "R-Vehicle-Body02": 10000, //leopard
 
     "R-Struc-Research-Upgrade01": 100000000,
@@ -101,12 +101,37 @@ const researches = {
 }
 
 
-var body05PriorityUnlocked = false
+
+const priorityChangeEvents = [
+    {   
+        "name": "enemy is getting vtol",
+        priorityEvent: () => {
+            return enumEnemies().some(enemy => getResearch("R-Struc-VTOLFactory", enemy).done)
+        },
+        "researches":
+        {
+            "R-Wpn-Sunburst": 10000,
+            "R-Wpn-Missile-LtSAM": 10000,
+        },
+
+    }
+]
+
+
+function runEvents() {
+    
+    priorityChangeEvents.forEach(event => {
+        if (event.priorityEvent()) {
+            Object.entries(event.researches).forEach(([research, priority]) => {
+                researches[research] = priority
+            })
+            chat(ALL_PLAYERS, event.name)
+            event.priorityEvent = () => false
+        }
+    })
+}
 
 function priorityResearch(research) {
-    if (research == "R-Vehicle-Body05") {
-        return body05PriorityUnlocked ? 100000 : 0
-    }
     if (researches[research]) {
         return researches[research]
     }
@@ -114,6 +139,7 @@ function priorityResearch(research) {
 }
 
 function monoResearch(lab) {
+    runEvents()
     if (structureIdle(lab)) {
         var research = enumResearch()
         if (research.length == 0) return
@@ -138,12 +164,8 @@ be set to null. The player parameter gives the player it is called for.
 * @param {_struct} structure
 * @param {Number} player
 */
-function eventResearched(research, structure, player) 
-{
-    if (player!==me)return
-    if (research.id == "R-Struc-Research-Upgrade09") {
-        body05PriorityUnlocked = true
-    }
-    if (gameTime<100)return
+function eventResearched(research, structure, player) {
+    if (player !== me) return
+    if (gameTime < 100) return
     monoResearch(structure)
 }
