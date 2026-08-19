@@ -79,7 +79,6 @@ const researches = {
 
     
     "R-Vehicle-Body02": 10000, //leopard
-    "R-Vehicle-Body05": 100000, //emp mortar body, high priority after Upgrade09
 
     "R-Struc-Research-Upgrade01": 100000000,
     "R-Struc-Research-Upgrade02": 100000000,
@@ -103,6 +102,9 @@ const researches = {
 
 
 function priorityResearch(research) {
+    if (research == "R-Vehicle-Body05") {
+        return componentAvailable(undefined, "Body5REC") ? 100000 : 0
+    }
     if (researches[research]) {
         return researches[research]
     }

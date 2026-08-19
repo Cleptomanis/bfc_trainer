@@ -84,7 +84,7 @@ function monoFactory(factory)
     ).length;
     var empMortarWeapon = empNames.find(i=>componentAvailable(undefined,i))
 
-    if (empMortarWeapon!==undefined && ownEmpMortarCount < EMP_MORTAR_LIMIT && playerPower(me) > 1 && countDroid(DROID_ANY,me) >50)
+    if (componentAvailable(undefined,"Body5REC") && empMortarWeapon!==undefined && ownEmpMortarCount < EMP_MORTAR_LIMIT && playerPower(me) > 1 && countDroid(DROID_ANY,me) >50)
     {
         return buildDroid(factory,empMortarWeapon,"Body5REC","wheeled01",0,0,[empMortarWeapon],[empMortarWeapon])
     }
