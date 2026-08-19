@@ -86,7 +86,7 @@ function monoFactory(factory)
 
     if (empMortarWeapon!==undefined && ownEmpMortarCount < EMP_MORTAR_LIMIT && playerPower(me) > 1 && countDroid(DROID_ANY,me) >50)
     {
-        return buildDroid(factory,empMortarWeapon,"Body2SUP","wheeled01",0,0,[empMortarWeapon],[empMortarWeapon])
+        return buildDroid(factory,empMortarWeapon,"Body5REC","wheeled01",0,0,[empMortarWeapon],[empMortarWeapon])
     }
 
     //Truck

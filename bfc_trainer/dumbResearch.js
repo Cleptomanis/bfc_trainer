@@ -79,7 +79,7 @@ const researches = {
 
     
     "R-Vehicle-Body02": 10000, //leopard
-
+    "R-Vehicle-Body05": 100000, //emp mortar body, high priority after Upgrade09
 
     "R-Struc-Research-Upgrade01": 100000000,
     "R-Struc-Research-Upgrade02": 100000000,
