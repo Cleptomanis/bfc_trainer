@@ -36,7 +36,7 @@ const templateWeapon={
     ROCKET:["Missile-A-T","Rocket-HvyA-T","Rocket-LtA-T","Rocket-Pod"],
     ROCKET2:["Missile-MdArt","Laser3BEAMMk1"/*flashlight */,"Rocket-MRL-Hvy","Rocket-MRL"],
     MORTAR:["Howitzer150Mk1","Howitzer-Incendiary","Howitzer03-Rot","Howitzer105Mk1", "Mortar-Incendiary","Mortar3ROTARYMk1","Mortar2Mk1","Mortar1Mk1"],
-    MORTAREMP:["Mortar-EMP"],
+    MORTAREMP:["MortarEMP"],
     FLAME:["PlasmiteFlamer","Flame2","Flame1Mk1"],
     BOMB:["Bomb5-VTOL-Plasmite","Bomb4-VTOL-HvyINC","RailGun2-VTOL","Bomb2-VTOL-HvHE","RailGun1-VTOL","Bomb1-VTOL-LtHE","Cannon4AUTO-VTOL"],
     REPAIR:["HeavyRepair","LightRepair1"],
