@@ -272,9 +272,29 @@ function dumbTank()
 
     if (argv.reserved & argEnum.reserved.HOLD)return
 
+    function isEmpDroid(droid)
+    {
+        var stat=objectWeaponStat(droid)
+        return !!stat && (
+            stat.Effect=="EMP" ||
+            /EMP/i.test(String(stat.Id||"")) ||
+            /EMP/i.test(String(stat.Name||""))
+        )
+    }
+    var empTeam=weaponTeam.filter(isEmpDroid)
+    var empSet=new Set(empTeam.map(i=>i.id))
+    var sensorTeamRange=Upgrades[me].Sensor["Sensor Turret"].Range/128-2
+
+    function sensorLikeRetreat(droid)
+    {
+        if (enumRange(droid.x,droid.y,sensorTeamRange,ENEMIES).length>0)return orderDroid(droid,DORDER_RTR)
+        return orderDroidLoc(droid,DORDER_PATROL,pos.x,pos.y)
+    }
+
     var lr=0
     if (state==0) weaponTeam.forEach((droid,i)=>
     {
+        if (empSet.has(droid.id)) return sensorLikeRetreat(droid)
         if (distBetween(droid,rpos)>_getEnemyLow()-18) return retreat(droid)
         if (droid.health<Math.min(95,healthThreshold)) return retreat(droid)
         //if (enumRange(rpos.x,rpos.y,8,ALLIES).filter(i=>i.weapons.length>0).length<weaponTeam.length*.3)return retreat(droid)
@@ -288,6 +308,7 @@ function dumbTank()
 
     if (state==1) weaponTeam.forEach((droid,i)=>
     {
+        if (empSet.has(droid.id)) return sensorLikeRetreat(droid)
         //weapon stats
         var stat=objectWeaponStat(droid)
         //when move spread droids to left | middle | right
@@ -361,7 +382,6 @@ function dumbTank()
         attack(droid,-odd,undefined,mode())
     })
 
-    var sensorTeamRange=Upgrades[me].Sensor["Sensor Turret"].Range/128-2
     sensorTeam.forEach(droid=>{
         if (enumRange(droid.x,droid.y,sensorTeamRange,ENEMIES).length>0)return orderDroid(droid,DORDER_RTR)
         return orderDroidLoc(droid,DORDER_PATROL,pos.x,pos.y)
