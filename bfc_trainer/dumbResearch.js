@@ -44,7 +44,11 @@ const researches = {
 
 
     "R-Struc-Power-Upgrade01": 5,
-
+    "R-Struc-Power-Upgrade01b": 5,
+    "R-Struc-Power-Upgrade01c": 5,
+    "R-Struc-Power-Upgrade02": 5,
+    "R-Struc-Power-Upgrade03": 5,
+    "R-Struc-Power-Upgrade03a": 5, 
 
     "R-Vehicle-Metals01": 1000,
     "R-Vehicle-Metals02": 1000,
@@ -88,6 +92,8 @@ const researches = {
     "R-Wpn-MortarEMP": 1000000, //emp mortar
 
     "R-Sys-Autorepair-General": 10000000, //autorepair
+    "R-Vehicle-Prop-Hover": 2, //hover  
+    "R-Vehicle-Engine03": 1, //cobra     
 
 
     "R-Struc-Factory-Upgrade01": 10000,
