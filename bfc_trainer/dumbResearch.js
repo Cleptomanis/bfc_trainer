@@ -101,9 +101,11 @@ const researches = {
 }
 
 
+var body05PriorityUnlocked = false
+
 function priorityResearch(research) {
     if (research == "R-Vehicle-Body05") {
-        return componentAvailable(undefined, "Body5REC") ? 100000 : 0
+        return body05PriorityUnlocked ? 100000 : 0
     }
     if (researches[research]) {
         return researches[research]
@@ -136,10 +138,12 @@ be set to null. The player parameter gives the player it is called for.
 * @param {_struct} structure
 * @param {Number} player
 */
-/*
 function eventResearched(research, structure, player) 
 {
     if (player!==me)return
+    if (research.id == "R-Struc-Research-Upgrade09") {
+        body05PriorityUnlocked = true
+    }
     if (gameTime<100)return
     monoResearch(structure)
-}*/
+}
