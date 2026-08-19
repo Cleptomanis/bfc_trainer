@@ -86,7 +86,9 @@ function monoFactory(factory)
 
     if (componentAvailable(undefined,"Body5REC") && empMortarWeapon!==undefined && ownEmpMortarCount < EMP_MORTAR_LIMIT && playerPower(me) > 1 && countDroid(DROID_ANY,me) >50)
     {
-        return buildDroid(factory,empMortarWeapon,"Body5REC","wheeled01",0,0,[empMortarWeapon],[empMortarWeapon])
+        // prefer hover propulsion for EMP mortar when available
+        var empProp = componentAvailable(undefined, "hover01") ? "hover01" : "wheeled01"
+        return buildDroid(factory,empMortarWeapon,"Body5REC",empProp,0,0,[empMortarWeapon],[empMortarWeapon])
     }
 
     //Truck
