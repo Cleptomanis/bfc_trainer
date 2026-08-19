@@ -44,11 +44,6 @@ const researches = {
 
 
     "R-Struc-Power-Upgrade01": 5,
-    "R-Struc-Power-Upgrade02": 20,
-    "R-Struc-Power-Upgrade03": 3,
-    "R-Struc-Power-Upgrade04": 3,
-    "R-Struc-Power-Upgrade05": 3,
-    "R-Struc-Power-Upgrade06": 3,
 
 
     "R-Vehicle-Metals01": 1000,
@@ -62,9 +57,9 @@ const researches = {
     "R-Vehicle-Metals09": 10,
 
 
-    "R-Cyborg-Metals01": 1000,
-    "R-Cyborg-Metals02": 1000,
-    "R-Cyborg-Metals03": 1000,
+    "R-Cyborg-Metals01": 600,
+    "R-Cyborg-Metals02": 600,
+    "R-Cyborg-Metals03": 400,
     "R-Cyborg-Metals04": 1000,
     "R-Cyborg-Metals05": 20,
     "R-Cyborg-Metals06": 20,
@@ -91,7 +86,6 @@ const researches = {
     "R-Struc-Research-Upgrade09": 100000000,
 
     "R-Wpn-MortarEMP": 1000000, //emp mortar
-    "R-Comp-CommandTurret02": 1000000, //command turret mk2
 
     "R-Sys-Autorepair-General": 10000000, //autorepair
 
@@ -103,7 +97,7 @@ const researches = {
 
 
 const priorityChangeEvents = [
-    {   
+    {
         "name": "enemy is getting vtol",
         priorityEvent: () => {
             return enumEnemies().some(enemy => getResearch("R-Struc-VTOLFactory", enemy).done)
@@ -113,13 +107,38 @@ const priorityChangeEvents = [
             "R-Wpn-Sunburst": 10000,
             "R-Wpn-Missile-LtSAM": 10000,
         },
+    },
+    {
+        name: "i got lab 9",
+        priorityEvent: () => {
+            return getResearch("R-Struc-Research-Upgrade09", me).done
+        },
+        "researches":
+        {
+            "R-Comp-CommandTurret02": 100, //for emp mortar
+            "R-Vehicle-Body05": 10000, //cobra for emp mortar
+        }
+    },
+    {
+        name: "i got scourge",
+        priorityEvent: () => {
+            return getResearch("R-Wpn-Missile2A-T", me).done
+        },
+        "researches":
+        {
+            "R-Struc-Power-Upgrade01b": 20,
+            "R-Struc-Power-Upgrade01c": 3,
+            "R-Struc-Power-Upgrade02": 3,
+            "R-Struc-Power-Upgrade02b": 3,
+            "R-Struc-Power-Upgrade02c": 3,
 
+        }
     }
 ]
 
 
 function runEvents() {
-    
+
     priorityChangeEvents.forEach(event => {
         if (event.priorityEvent()) {
             Object.entries(event.researches).forEach(([research, priority]) => {
@@ -154,18 +173,4 @@ function monoResearch(lab) {
 function dumbResearch() {
     var lab = enumStruct(me, RESEARCH_LAB)
     lab.forEach(monoResearch)
-}
-
-/** An event that is run whenever a new research is available. The structure
-parameter is set if the research comes from a research lab owned by the
-current player. If an ally does the research, the structure parameter will
-be set to null. The player parameter gives the player it is called for. 
-* @param {_research} research
-* @param {_struct} structure
-* @param {Number} player
-*/
-function eventResearched(research, structure, player) {
-    if (player !== me) return
-    if (gameTime < 100) return
-    monoResearch(structure)
 }
