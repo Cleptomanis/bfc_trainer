@@ -43,7 +43,7 @@ const researches = {
 
 
 
-    "R-Struc-Power-Upgrade01": 5,
+    "R-Struc-Power-Upgrade01": 30,
     "R-Struc-Power-Upgrade01b": 5,
     "R-Struc-Power-Upgrade01c": 5,
     "R-Struc-Power-Upgrade02": 5,
