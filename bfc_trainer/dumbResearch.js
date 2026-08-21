@@ -97,7 +97,7 @@ const researches = {
 
 
     "R-Struc-Factory-Upgrade01": 10000,
-    "R-Struc-Factory-Upgrade04": 2, //robotic
+    "R-Struc-Factory-Upgrade04": 25, //robotic
 }
 
 
