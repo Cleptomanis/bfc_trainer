@@ -5,7 +5,7 @@ const researches = {
     "R-Wpn-Rocket-Damage03": 100000,
     "R-Wpn-Rocket-Damage04": 100000,
     "R-Wpn-Rocket-Damage05": 100000, //heat mk 2
-    "R-Wpn-Rocket-Damage06": 100000,
+    "R-Wpn-Rocket-Damage06": 1,
     "R-Wpn-Rocket-Damage07": 1,
     "R-Wpn-Rocket-Damage08": 1,
     "R-Wpn-Rocket-Damage09": 1,

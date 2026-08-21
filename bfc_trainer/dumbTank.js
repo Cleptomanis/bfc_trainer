@@ -5,7 +5,7 @@ var state = 0
 
 var repairThreshold = 40
 var _repairMod = [1, 1.2, 1.5, 1, 1, 1, 1]
-var repairHigh = .5
+var repairHigh = .6
 var repairLow = .1
 
 var RTBThreshold = 10
@@ -34,8 +34,15 @@ var rocketRatio = 0.0
 var mortarRatio = 0.0
 var distRatio = 1.0
 
-var attackSpread = 3.0
-var retreatSpread = 7.0
+var attackSpreads = {//amount of army amount of spread
+    30:0.5,
+    60:1,
+    90:2,
+    120:3,
+    140:4,
+}
+
+var retreatSpread = 5.0
 var oddGroups = 5
 
 var healthyBorgRequirement = 0.4
@@ -239,7 +246,7 @@ function dumbTank() {
         if (!FLATMAP && distBetween(droid, home) < 20) return orderDroidLoc(droid, order, pos.x, pos.y)
 
         var target = pos
-        var coef2 = attackSpread
+        var coef2 = attackSpreads[Math.max(...Object.keys(attackSpreads).filter(i => weaponTeam.length > i))] || 0.5
         var stat = objectWeaponStat(droid)
 
         if (!stat.FireOnMove && stat.Effect == "ARTILLERY ROUND" && sensorTeam.length > 0 && sensorTeam[0].action == DACTION_OBSERVE) {
