@@ -246,7 +246,9 @@ function dumbTank() {
         if (!FLATMAP && distBetween(droid, home) < 20) return orderDroidLoc(droid, order, pos.x, pos.y)
 
         var target = pos
-        var coef2 = attackSpreads[Math.max(...Object.keys(attackSpreads).filter(i => weaponTeam.length > i))] || 0.5
+        //TODO refactor shit code
+        var coef2 = attackSpreads[Math.max(...Object.keys(attackSpreads).filter(i => weaponTeam.filter(droid => droid.health > 50).length > i))] || 0.5
+        if (!getResearch("R-Wpn-Missile2A-T", me).done) coef2 = Math.max(coef2, 1.5)
         var stat = objectWeaponStat(droid)
 
         if (!stat.FireOnMove && stat.Effect == "ARTILLERY ROUND" && sensorTeam.length > 0 && sensorTeam[0].action == DACTION_OBSERVE) {
@@ -338,8 +340,10 @@ function dumbTank() {
             //cyborg spin fast
             var margin = stat.FireOnMove ? 0 : droid.propulsion == "CyborgLegs" ? 2 : 8
             var pressure = stat.FireOnMove ? 0 : droid.propulsion == "CyborgLegs" ? 1 : 4
+            var range = stat.MaxRange / 128 - margin
+            if (droid.weapons[0]=="CyborgChaingun") range = 8
             if (
-                (enumRange(droid.x, droid.y, stat.MaxRange / 128 - margin, ENEMIES).length > pressure)
+                (enumRange(droid.x, droid.y, range, ENEMIES).length > pressure)
             ) return retreat(droid, odd)
 
         }
