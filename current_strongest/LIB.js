@@ -285,7 +285,9 @@ function weaponRange(player)
 }
 
 
-
+function enumEnemies() {
+    return playerData.map((data, i) => i).filter(i => !isSpectator(i) && !allianceExistsBetween(me, i))
+}
 
 
 
